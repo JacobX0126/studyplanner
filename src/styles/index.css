@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+
+/*
+ * 의미 기반 색 변수. 컴포넌트는 이 변수만 참조하고 hex 값을 직접 쓰지 않는다.
+ * 나중에 다크모드를 추가할 때는 여기에 [data-theme="dark"] 블록만 더하면 되고
+ * 컴포넌트 코드는 건드릴 필요가 없다.
+ */
+:root {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f5f9;
+  --color-border: #e2e8f0;
+
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #94a3b8;
+
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-primary-contrast: #ffffff;
+  --color-primary-soft: #eef2ff;
+
+  --color-success: #16a34a;
+  --color-success-soft: #f0fdf4;
+  --color-warning: #d97706;
+  --color-warning-soft: #fffbeb;
+  --color-danger: #dc2626;
+  --color-danger-soft: #fef2f2;
+
+  /* 잔디 캘린더 */
+  --color-grass-0: #ebedf0;
+  --color-grass-1: #c6e6c9;
+  --color-grass-2: #7fcf88;
+  --color-grass-3: #3fae57;
+  --color-grass-4: #22863a;
+  --color-grass-rest: #93c5fd;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+}
+
+/* 네이비 톤 다크 테마. 값만 바뀌고 컴포넌트는 그대로다. */
+[data-theme='dark'] {
+  --color-bg: #0b1220;
+  --color-surface: #111a2e;
+  --color-surface-muted: #182342;
+  --color-border: #263252;
+
+  --color-text: #e8ecf6;
+  --color-text-muted: #93a1c2;
+  --color-text-subtle: #5f6d92;
+
+  --color-primary: #818cf8;
+  --color-primary-hover: #a5b0fb;
+  --color-primary-contrast: #0b1220;
+  --color-primary-soft: rgba(129, 140, 248, 0.16);
+
+  --color-success: #34d399;
+  --color-success-soft: rgba(52, 211, 153, 0.14);
+  --color-warning: #fbbf24;
+  --color-warning-soft: rgba(251, 191, 36, 0.14);
+  --color-danger: #f87171;
+  --color-danger-soft: rgba(248, 113, 113, 0.14);
+
+  --color-grass-0: #182342;
+  --color-grass-1: #1d3a4a;
+  --color-grass-2: #1c5a63;
+  --color-grass-3: #1a8a7a;
+  --color-grass-4: #34d399;
+  --color-grass-rest: #60a5fa;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-subtle: var(--color-text-subtle);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-contrast: var(--color-primary-contrast);
+  --color-primary-soft: var(--color-primary-soft);
+  --color-success: var(--color-success);
+  --color-success-soft: var(--color-success-soft);
+  --color-warning: var(--color-warning);
+  --color-warning-soft: var(--color-warning-soft);
+  --color-danger: var(--color-danger);
+  --color-danger-soft: var(--color-danger-soft);
+  --color-grass-0: var(--color-grass-0);
+  --color-grass-1: var(--color-grass-1);
+  --color-grass-2: var(--color-grass-2);
+  --color-grass-3: var(--color-grass-3);
+  --color-grass-4: var(--color-grass-4);
+  --color-grass-rest: var(--color-grass-rest);
+  --font-sans: 'Inter', 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
